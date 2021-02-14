@@ -1,0 +1,21 @@
+{
+  "name": "poc-monorepo",
+  "version": "1.0.0",
+  "description": "A project to test some stuffs that i need know",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix ./packages/front && npm run build --prefix ./packages/back",
+    "serve": "npm run serve --prefix ./packages/back",
+    "dev:front": "npm run dev --prefix ./packages/front",
+    "dev:back": "npm run dev --prefix ./packages/back"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": "14.x",
+    "npm": "7.x"
+  },
+  "author": "marcotterra",
+  "license": "ISC"
+}
