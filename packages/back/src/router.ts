@@ -6,6 +6,6 @@ const controller = new Controller();
 
 router.get("/manifest", controller.manifest);
 
-router.get("/", controller.index);
+router.get("*", controller.index);
 
 export default router;

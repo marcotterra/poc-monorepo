@@ -1,18 +1,22 @@
 import { Request, Response } from "express";
-import config from './config'
+
+import config from "./config";
+import IndexBuilderService from "./services/build-index";
 
 class Controller {
-  public index(req: Request, res: Response) {
-    const { params, query } = req;
-    console.log("params -> ", params);
-    console.log("query -> ", query);
+  public async index(req: Request, res: Response) {
+    const { path } = req;
 
-    return res.sendFile(`${config.FRONT_PATH}/index.html`)
+    const file = `${config.FRONT_PATH}/index.html`;
+
+    const indexBuilder = new IndexBuilderService({ file, path });
+
+    const response = await indexBuilder.build();
+
+    return res.send(response);
   }
 
   public manifest(req: Request, res: Response) {
-    console.log("manifest");
-
     return res.json({ manifest: "data" });
   }
 }

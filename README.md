@@ -14,4 +14,12 @@ Study for resolve common recent pains
   - react-router: frontend router
 
 
+### Things to improve
+  - cache index.html in memory
+  - cdn
+
 _... in progress_
+
+
+https://medium.com/javascript-in-plain-english/server-side-rendering-in-react-expressjs-8a87af0edba4
+https://github.com/yukisato/express-react/blob/main/package.json
